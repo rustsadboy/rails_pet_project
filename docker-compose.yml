@@ -1,0 +1,51 @@
+version: "3.6"
+
+services:
+  pet:
+    build: .
+    container_name: pet-api
+    restart: always
+    depends_on:
+      - database
+      - redis
+    volumes:
+      - ./log:/var/log
+      - ./logs:/pet/log
+      - ./storage:/pet/storage
+      - ./certs:/pet/certs
+    ports:
+      - '3002:3000'
+    env_file: .env
+    networks:
+      - pet
+
+  database:
+    image: postgres:15
+    volumes:
+      - ./.docker/volumes/database:/var/lib/postgresql/data
+    env_file: .env
+    networks:
+      - pet
+
+  redis:
+    image: redis
+    env_file: .env
+    volumes:
+      - ./data/redis:/data:rw
+    networks:
+      - pet
+  
+  sidekiq:
+    build: .
+    restart: always
+    depends_on:
+      - database
+      - redis
+      - pet
+    command: bundle exec sidekiq -e development -C config/sidekiq.yml | tee log/sidekiq.log
+    env_file: .env
+    networks:
+      - pet
+
+networks:
+  pet:

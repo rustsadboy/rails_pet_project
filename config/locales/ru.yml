@@ -1,0 +1,27 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: Требуется пароль
+            name:
+              blank: Требуется имя
+            email:
+              blank: Требуется почта
+
+      messages:
+        record_invalid: Запись невалидна
+
+  api:
+    errors:
+      authentication: Ошибка аутентификации
+      record_not_found: Запись не найдена
+      access_forbidden: Доступ запрещен
+
+      messages:
+          not_logged_in: Необходимо авторизироваться
+          record_not_exists: Запись не существует
+          access_forbidden: Доступ к запрошенному ресурсу запрещен
+          invalid_audio_type: Недоступный тип аудио-файла

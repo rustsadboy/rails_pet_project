@@ -1,0 +1,80 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: Record invalid
+
+  dry_validation:
+    errors:
+      key?:
+        failure: is missing
+      gteq?:
+        failure: Expected min %{num}
+      lteq?:
+        failure: Expected max %{num}
+      min_size?:
+        failure: Expected min %{num} symbols
+      max_size?:
+        failure: Expected max %{num} symbols
+      included_in?:
+        failure: invalid value
+      int?:
+        failure: Expected number
+      str?:
+        failure: Expected string
+      bool?:
+        failure: Expected boolean value
+      date?:
+        failure: Expected date
+      time?:
+        failure: Expected time and date
+      array?:
+        failure: Expected array
+      hash?:
+        failure: Expected hash
+      unique?:
+        failure: Expected unique values
+
+  api:
+    register_separator: and
+    success:
+      messages:
+        confirmation: Your email successfuly confirmed
+        password_reset: Your new password was sended on email
+
+    errors:
+      authentication: Authentication error
+      record_not_found: Record not found
+      access_forbidden: Access forbidden
+      unprocessable_entity_exception: Invalid data
+      not_acceptable: Not Acceptable
+      conflict: Conflict
+      forbidden_errors:
+        invalid_public_key: Provided public key is not valid
+        public_key_missing: Failed to receive Apple public keys
+        token_not_verified: Token is not verified as issued by Apple
+        token_expired: Token has expired
+        wrong_ad_data: Provided data is not valid
+
+      messages:
+        not_logged_in: Authentication needed
+        record_not_exists: Record not exists
+        access_forbidden: Access to requested resource forbidden
+        not_acceptable: Unable to provide a response that matches the requested format
+        conflict: The request could not be completed due to a conflict with the current state of the resource
+        email_already_exists: Email already registered in app
+        invalid_email_format: Email format is not valid
+        new_password_needed: New password needed
+        password_confirmation_needed: Password confirmation needed
+        old_password_fails: Failed to authenticate user with old password
+        passwords_do_not_match: New password and password confirmation do not match
+        invalid_registration_token: Invalid registration token
+        invalid_token: Invalid token format
+        self_subscription: You can't subscribe to yourself
+        already_subscribed: User already subscribed
+        recovery_already_created: Message already sended on your email. Maybe it's in the spam folder?
+        recovery_token_expired: Link outdated
+        email_not_confirmed: Your email not confirmed
+        incorrect_password: Incorrect password
+        invalid_audio_type: Invalid audio type
+        email_unchangeable: You can't link email

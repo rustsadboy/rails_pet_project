@@ -1,0 +1,16 @@
+:concurrency: 5
+:pidfile: tmp/pids/sidekiq.pid
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 10
+:queues:
+  - default
+  - mailers
+  - audio_destroy
+
+:scheduler:
+  :schedule:
+    audio_destroy:
+      cron: '0 3 * * *' # Once per day at 03:00
+      class: AudioDestroyJob
